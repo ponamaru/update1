@@ -1,0 +1,90 @@
+<html>
+    <script>
+const audio = new Audio('らにしあらにしあ.mp3');
+ 
+addEventListener('click', () => {
+audio.play();
+window.setInterval(bgm, 39000);
+});
+function bgm() {
+    audio.play();
+    }
+    </script>
+<script src="yux.js"></script>
+<style>
+#stickhead {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#stickeye3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#stickbody {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#leftleg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#rightleg {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.fadeout {
+  animation : fadeOut 1s;
+  animation-fill-mode: both;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+html, body {
+    overflow: hidden;
+}
+#fadein {
+  z-index: 1;
+object-fit: cover;
+position: absolute;
+top: 0;
+left: 0;
+}
+#black {
+  z-index: 2;
+object-fit: cover;
+position: absolute;
+top: 0;
+left: 0;
+}
+.fadein {
+  animation : fadein 3s;
+  animation-fill-mode: both;
+}
+@keyframes fadein {
+  0% {
+    opacity: 1 ;
+  }
+  100% {
+    opacity: 0 ;
+  }
+}
+.op0 {
+opacity: 0;
+}
+.op1 {
+opacity: 1;
+}
+</style>
+    <p></p>
+    <p></p>
+</html>
