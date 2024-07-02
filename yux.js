@@ -62,3 +62,64 @@ function screenin() {
   }
 }
 
+var motion = 0;
+
+addEventListener( "keydown", keydownfunc1 );
+
+function keydownfunc1( event ) {
+	var key_code = event.keyCode;
+if( key_code === 40 ) {
+if( motion != 1 ) {
+motion = 1;
+walk();
+}
+}
+}
+
+addEventListener( "keyup", keydownfunc1 );
+
+function keyupfunc1( event ) {
+	var key_code = event.keyCode;
+if( key_code === 40 ) {
+motion = 0;
+image.finish();
+}
+}
+
+function walk() {
+const image = document.getElementById('rightleg'); // ロゴ画像
+
+if (motion === 1) {
+image.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'rotate(-15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(15deg)' },
+    { transform: 'rotate(-15deg)'}
+  ], 
+  // タイミングに関する設定
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 1000, // 再生時間（1000ミリ秒）
+    iterations: Infinity,  // アニメーションの繰り返し回数（ずっと繰り返す）
+  },
+);
+}
+const image2 = document.getElementById('leftleg'); // ロゴ画像
+if (motion === 1) {
+image2.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'rotate(15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(-15deg)' },
+    { transform: 'rotate(15deg)'}
+  ], 
+  // タイミングに関する設定
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 1000, // 再生時間（1000ミリ秒）
+    iterations: Infinity,  // アニメーションの繰り返し回数（ずっと繰り返す）
+  },
+);
+}
+}
