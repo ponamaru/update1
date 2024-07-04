@@ -84,7 +84,57 @@ opacity: 0;
 .op1 {
 opacity: 1;
 }
+#img {
+position: absolute;
+top: 0;
+left: 0;
+}
+#img2 {
+position: absolute;
+top: 0;
+left: 0;
+}
+#img3 {
+position: absolute;
+top: 0;
+left: 0;
+}
+#img4 {
+position: absolute;
+top: 0;
+left: 0;
+}
 </style>
+<img id="img1" src="teststage.png" width="1450">
+<img id="img2" src="teststage.png" width="1450">
+<img id="img3" src="black2.png" width="1450">
+<img id="img4" src="black2.png" width="1450">
+<body>
+<script>
+var stageloop = 0;
+var stageX = 200;
+var SHL = stageX + 1440;
+
+
+function stagelink() {
+SHL = stageX + 1440;
+if(stageloop === 0){
+document.getElementById( 'img2' ).style.left = SHL + "px";
+document.getElementById( 'img3' ).style.left = SHL + 1440 + "px";
+document.getElementById( 'img4' ).style.left = SHL + 2880 + "px";
+}
+if(stageloop === 1){
+if(SHL < 0) {
+document.getElementById( 'img1' ).style.left = SHL + 1440 + "px";
+}
+if(stageX < 0) {
+document.getElementById( 'img2' ).style.left = stageX + 1440 + "px";
+}
+}
+}
+let intervalI = setInterval(stagelink, 1);
+	</script>
+</body>
     <p></p>
     <p></p>
 </html>
