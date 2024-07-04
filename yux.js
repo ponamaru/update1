@@ -7,14 +7,18 @@ document.write( '<div id="stickface" class="item2"><div class="item rotateX" id=
 
 var y = 300;
 var x = 500;
+var ws = 10;
 
   fadein(); 
 
 function bodylink() {
 
+document.getElementById( 'face2' ).style.top = y + 10 + "px";
+document.getElementById( 'face2' ).style.left = x + "px";
+
 document.getElementById( 'stickhead' ).style.top = y + "px";
 document.getElementById( 'stickhead' ).style.left = x + "px";
-
+    
 document.getElementById( 'stickeye3' ).style.top = y -40 + "px";
 document.getElementById( 'stickeye3' ).style.left = x + "px";
 
@@ -68,58 +72,247 @@ addEventListener( "keydown", keydownfunc1 );
 
 function keydownfunc1( event ) {
 	var key_code = event.keyCode;
-if( key_code === 40 ) {
+if( key_code === 37 ) {
+cos3(); cos(); 
+document.getElementById( 'face2' ).style.left = x + "px";
 if( motion != 1 ) {
 motion = 1;
 walk();
 }
 }
+if( key_code === 39 ) {
+cos4();
+cos2();
+ document.getElementById( 'face2' ).style.left = x + 10 + "px";
+if( motion != 1 ) {
+motion = 1;
+walk();
+}
+}
+if( key_code === 16 )  ws = 5;
+    
+}
+function cos() {
+    const changeimg = document.getElementById("stickeye");
+    changeimg.src = "stickeye3.png";
 }
 
-addEventListener( "keyup", keydownfunc1 );
+function cos2() {
+    const changeimg = document.getElementById("stickeye");
+    changeimg.src = "stickeye.png";
+}
+
+function cos3() {
+    const changeimg = document.getElementById("stickhead");
+    changeimg.src = "stickhead.png";
+}
+
+function cos4() {
+    const changeimg = document.getElementById("stickhead");
+    changeimg.src = "stickhead4.png";
+}
+
+addEventListener( "keyup", keyupfunc1 );
 
 function keyupfunc1( event ) {
 	var key_code = event.keyCode;
-if( key_code === 40 ) {
+if( key_code === 37 ) {
 motion = 0;
-image.finish();
+rrr();
 }
+if( key_code === 39 ) {
+motion = 0;
+rrr();
 }
+if( key_code === 16 )  ws = 10;
+}
+const image = document.getElementById('rightleg'); // ロゴ画像
+const image2 = document.getElementById('leftleg'); // ロゴ画像
+const image3 = document.getElementById('rightleg'); // ロゴ画像
+const image4 = document.getElementById('leftleg'); // ロゴ画像
+const image5 = document.getElementById('face2'); // ロゴ画像
+const image6 = document.getElementById('face2'); // ロゴ画像
+const image7 = document.getElementById('face2'); // ロゴ画像
 
 function walk() {
-const image = document.getElementById('rightleg'); // ロゴ画像
-
 if (motion === 1) {
+if (ws === 10) {
 image.animate(
   // 途中の状態を表す配列
   [
+    { transform: 'rotate(0deg)'},
     { transform: 'rotate(-15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(0deg)'},
     { transform: 'rotate(15deg)' },
-    { transform: 'rotate(-15deg)'}
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(-15deg)'},
+    { transform: 'rotate(0deg)'}
   ], 
   // タイミングに関する設定
   {
     fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 1000, // 再生時間（1000ミリ秒）
-    iterations: Infinity,  // アニメーションの繰り返し回数（ずっと繰り返す）
+    duration: 1000, 
   },
 );
-}
-const image2 = document.getElementById('leftleg'); // ロゴ画像
-if (motion === 1) {
+
 image2.animate(
   // 途中の状態を表す配列
   [
+    { transform: 'rotate(0deg)'},
     { transform: 'rotate(15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(0deg)'},
     { transform: 'rotate(-15deg)' },
-    { transform: 'rotate(15deg)'}
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(15deg)'},
+    { transform: 'rotate(0deg)'}
   ], 
   // タイミングに関する設定
   {
     fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
     duration: 1000, // 再生時間（1000ミリ秒）
-    iterations: Infinity,  // アニメーションの繰り返し回数（ずっと繰り返す）
+  },
+);
+image5.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(-2px)' },
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(-2px)' },
+    { transform: 'translateY(0px)'}
+  ], 
+    
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 1000, // 再生時間（1000ミリ秒）
+  },
+);
+}
+if (ws === 5) {
+image.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(30deg)' },
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(-30deg)'},
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(30deg)' },
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(-30deg)'},
+    { transform: 'rotate(0deg)'}
+  ], 
+  // タイミングに関する設定
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 1000, 
+  },
+);
+
+image2.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(-30deg)' },
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(30deg)'},
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(-30deg)' },
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(30deg)'},
+    { transform: 'rotate(0deg)'}
+  ], 
+  // タイミングに関する設定
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 1000, // 再生時間（1000ミリ秒）
+  },
+);
+image6.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(-2px)' },
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(-2px)' },
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(-2px)' },
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(-2px)' },
+    { transform: 'translateY(0px)'}
+  ], 
+    
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 1000, // 再生時間（1000ミリ秒）
+  },
+);
+}
+
+}
+}
+rrr();
+function rrr() {
+if( motion === 0 ) {
+image7.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(4px)'},
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(-4px)'},
+    { transform: 'translateY(0px)'}
+  ], 
+    
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 4000, // 再生時間（1000ミリ秒）
   },
 );
 }
 }
+
+function motion1() {
+image3.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'rotate(15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(0deg)'}
+  ], 
+  // タイミングに関する設定
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 500, // 再生時間（1000ミリ秒）
+  },
+);
+image4.animate(
+  // 途中の状態を表す配列
+  [
+    { transform: 'rotate(-15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(0deg)'}
+  ], 
+  // タイミングに関する設定
+  {
+    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    duration: 500, // 再生時間（1000ミリ秒）
+  },
+);
+}
+let intervalId = setInterval(walk, 1000);
+let intervalId2 = setInterval(rrr, 4000);
