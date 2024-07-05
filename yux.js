@@ -74,6 +74,7 @@ addEventListener( "keydown", keydownfunc1 );
 function keydownfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
+lr = -1;
 cos3(); cos(); 
 document.getElementById( 'face2' ).style.left = x + "px";
 if( motion != 1 ) {
@@ -82,6 +83,7 @@ walk();
 }
 }
 if( key_code === 39 ) {
+lr = 1;
 cos4();
 cos2();
 if( motion != 1 ) {
@@ -125,6 +127,7 @@ motion = 0;
 rrr();
 }
 if( key_code === 16 )  ws = 10;
+motion = 0;
 }
 const image = document.getElementById('rightleg'); // ロゴ画像
 const image2 = document.getElementById('leftleg'); // ロゴ画像
@@ -274,9 +277,9 @@ image7.animate(
   // 途中の状態を表す配列
   [
     { transform: 'translateY(0px)'},
-    { transform: 'translateY(4px)'},
+    { transform: 'translateY(6px)'},
     { transform: 'translateY(0px)'},
-    { transform: 'translateY(-4px)'},
+    { transform: 'translateY(-6px)'},
     { transform: 'translateY(0px)'}
   ], 
     
@@ -318,7 +321,8 @@ let intervalId = setInterval(walk, 1000);
 let intervalId2 = setInterval(rrr, 4000);
 
 var leftend = 670;
-var rightend = -2000;
+var rightend = -1990;
+var lr = -1;
 
 addEventListener( "keydown", keydownfunc2 );
 
@@ -328,14 +332,25 @@ if(walking === 2){
 	if( key_code === 40 ) alert(stageX)
 if(stageX > rightend) {
 	if( key_code === 39 ) {
-        stageX -= 10;
+        if( ws === 10 )stageX -= 10;
+        if( ws === 5 )stageX -= 20;
         }
 }
 if(stageX < leftend) {
 	if( key_code === 37 ) {
-        stageX += 10;
+        if( ws === 10 )stageX += 10;
+        if( ws === 5 )stageX += 20;
         }
         }
+if( key_code === 16 ) {
+motion = 1;
+if(stageX < leftend) {
+if (lr === -1)stageX += 20;
+}
+if(stageX > rightend) {
+if (lr === 1)stageX -= 20;
+    }
+    }
 	document.getElementById( 'img' ).style.top = stageY + "px";
 	document.getElementById( 'img' ).style.left = stageX + "px";
 }
