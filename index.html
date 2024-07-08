@@ -10,11 +10,8 @@ const audio = new Audio('マイクラにありそうな曲.mp3');
  
 addEventListener('click', () => {
 audio.play();
-window.setInterval(bgm, 59000);
+audio.loop = true;
 });
-function bgm() {
-    audio.play();
-    }
     </script>
 <script src="yux.js"></script>
 </head>
