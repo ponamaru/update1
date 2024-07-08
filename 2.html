@@ -7,15 +7,12 @@
 <body bgcolor="#000000"></body>
 <head>
     <script>
-const audio = new Audio('マイクラにありそうな曲.mp3');
+const audio = new Audio('c.mp3');
  
 addEventListener('click', () => {
 audio.play();
-window.setInterval(bgm, 59000);
+audio.loop = true;
 });
-function bgm() {
-    audio.play();
-    }
     </script>
 <script src="yux2.js"></script>
 </head>
