@@ -5,7 +5,7 @@ document.write( '<img src="stick.png" id="leftleg" class="leftleg" width="600">'
 document.write( '<img src="stick.png" id="rightleg" class="rightleg" width="600">' );
 document.write( '<div id="stickface" class="item2"><div class="item rotateX" id="face2" width="600"><img src="stickhead.png" id="stickhead" type="file1" class="red" width="600"><div class="re-wrap" id="stickeye3"><img src="stickeye3.png" id="stickeye" class="re" width="600"></div></div></div>' );
 
-document.write( '<img src="目.png" class="ti0" id="eye" width="250">' );
+document.write( '<img src="car.png" class="ti0" id="eye" width="250">' );
 document.write( '<img src="rico.png" class="ti0" id="eye2" width="250">' );
 
 var y = 300;
