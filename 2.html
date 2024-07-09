@@ -9,7 +9,11 @@
 <title>update2</title>
     <script>
 const audio = new Audio('c.mp3');
- 
+ window.setTimeout(Msg, 3000);
+
+function Msg(){
+    alert('You can play music with click.');
+}
 addEventListener('click', () => {
 audio.play();
 audio.loop = true;
