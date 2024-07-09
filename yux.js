@@ -418,7 +418,7 @@ Z1();
 }
 
 
-var array = ['Eye"Hi,I am Isaac."', 'Stick"I am Stick."', 'He is nice guy.','　'];
+var array = ['Eye"Hi,I am Isaac."', 'Stick"I am Stick."', 'He is nice guy.',''];
 addEventListener( "keydown", Z );
 
 
