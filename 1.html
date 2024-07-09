@@ -43,6 +43,11 @@ audio.loop = true;
 	top: 0;
 	left: 0;
 }
+#stickface {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 .fadeout {
   animation : fadeOut 1s;
   animation-fill-mode: both;
@@ -114,9 +119,17 @@ left: 0;
 position: absolute;
 top: 0;
 left: 0;
+width: 1550px;
+height: 800px;
+transform-origin:50% 55%;
 }
 #stickeye3 {
 animation: floatingw 4s ease-in-out infinite alternate-reverse;
+}
+#eye {
+position: absolute;
+top: 0;
+left: 0;
 }
 
     @keyframes floatingw {
@@ -133,7 +146,21 @@ animation: floatingw 4s ease-in-out infinite alternate-reverse;
         transform: scaleY(1);
       }
 }
+.fuchidori {
+  color: #000;
+  -webkit-text-stroke: 1px #FFF;
+  text-stroke: 1px #FFF;
+  font-weight: bold;
+  font-size: 200%;
+}
+#area {
+position: absolute;
+top: 0;
+left: 0;
+}
 </style>
+<img id="eye" src="目.png">
+<div id="area" class="fuchidori">Z_key</div>
     <p></p>
     <p></p>
 </html>
