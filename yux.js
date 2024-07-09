@@ -18,11 +18,12 @@ var walking = 2;
 
 function bodylink() {
 
-document.getElementById( 'face2' ).style.top = y + "px";
-document.getElementById( 'face2' ).style.left = x + "px";
+document.getElementById( 'stickhead' ).style.top = y + "px";
+document.getElementById( 'stickhead' ).style.left = x + "px";
     
-document.getElementById( 'stickeye3' ).style.top = -40 + "px";
-
+document.getElementById( 'stickeye3' ).style.top = y -40 + "px";
+document.getElementById( 'stickeye3' ).style.left = x + "px";
+    
 document.getElementById( 'stickbody' ).style.top = y -30 + "px";
 document.getElementById( 'stickbody' ).style.left = x -15 + "px";
 
@@ -74,18 +75,22 @@ addEventListener( "keydown", keydownfunc1 );
 function keydownfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
+if(ws != 0) {
 lr = -1;
 cos3(); cos(); 
-document.getElementById( 'face2' ).style.left = x + "px";
+document.getElementById( 'stickhead' ).style.left = x + "px";
+}
 if( motion != 1 ) {
 motion = 1;
 walk();
 }
 }
 if( key_code === 39 ) {
+if(ws != 0) {
 lr = 1;
 cos4();
 cos2();
+}
 if( motion != 1 ) {
 motion = 1;
 walk();
@@ -120,63 +125,67 @@ function keyupfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
 motion = 0;
+if(ws != 0) {
 rrr();
+}
 }
 if( key_code === 39 ) {
 motion = 0;
+if(ws != 0) {
 rrr();
 }
-if( key_code === 16 )  ws = 10;
-motion = 0;
 }
-const image = document.getElementById('rightleg'); // ロゴ画像
-const image2 = document.getElementById('leftleg'); // ロゴ画像
-const image3 = document.getElementById('rightleg'); // ロゴ画像
-const image4 = document.getElementById('leftleg'); // ロゴ画像
-const image5 = document.getElementById('face2'); // ロゴ画像
-const image6 = document.getElementById('face2'); // ロゴ画像
-const image7 = document.getElementById('face2'); // ロゴ画像
+if( key_code === 16 )  ws = 10;
+if(ws != 0) motion = 0;
+}
+const image = document.getElementById('rightleg');
+const image2 = document.getElementById('leftleg'); 
+const image3 = document.getElementById('rightleg'); 
+const image4 = document.getElementById('leftleg'); 
+const image5 = document.getElementById('stickface'); 
+const image6 = document.getElementById('stickface'); 
+const image7 = document.getElementById('stickface'); 
 
 function walk() {
 if (motion === 1) {
 if (ws === 10) {
 image.animate(
-  // 途中の状態を表す配列
+
   [
     { transform: 'rotate(0deg)'},
-    { transform: 'rotate(-15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(-15deg)'}, 
     { transform: 'rotate(0deg)'},
     { transform: 'rotate(15deg)' },
     { transform: 'rotate(0deg)'},
     { transform: 'rotate(-15deg)'},
     { transform: 'rotate(0deg)'}
   ], 
-  // タイミングに関する設定
+
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    fill: 'backwards', 
     duration: 1000, 
   },
 );
 
 image2.animate(
-  // 途中の状態を表す配列
+  
   [
     { transform: 'rotate(0deg)'},
-    { transform: 'rotate(15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(15deg)'}, 
     { transform: 'rotate(0deg)'},
     { transform: 'rotate(-15deg)' },
     { transform: 'rotate(0deg)'},
     { transform: 'rotate(15deg)'},
     { transform: 'rotate(0deg)'}
   ], 
-  // タイミングに関する設定
+
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 1000, // 再生時間（1000ミリ秒）
+    fill: 'backwards', 
+    duration: 1000, 
   },
 );
 image5.animate(
-  // 途中の状態を表す配列
+ 
   [
     { transform: 'translateY(0px)'},
     { transform: 'translateY(2px)'},
@@ -191,14 +200,14 @@ image5.animate(
   ], 
     
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 1000, // 再生時間（1000ミリ秒）
+    fill: 'backwards', 
+    duration: 1000, 
   },
 );
 }
 if (ws === 5) {
 image.animate(
-  // 途中の状態を表す配列
+
   [
     { transform: 'rotate(0deg)'},
     { transform: 'rotate(30deg)' },
@@ -210,15 +219,15 @@ image.animate(
     { transform: 'rotate(-30deg)'},
     { transform: 'rotate(0deg)'}
   ], 
-  // タイミングに関する設定
+
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
+    fill: 'backwards',
     duration: 1000, 
   },
 );
 
 image2.animate(
-  // 途中の状態を表す配列
+
   [
     { transform: 'rotate(0deg)'},
     { transform: 'rotate(-30deg)' },
@@ -230,14 +239,14 @@ image2.animate(
     { transform: 'rotate(30deg)'},
     { transform: 'rotate(0deg)'}
   ], 
-  // タイミングに関する設定
+
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 1000, // 再生時間（1000ミリ秒）
+    fill: 'backwards', 
+    duration: 1000, 
   },
 );
 image6.animate(
-  // 途中の状態を表す配列
+
   [
     { transform: 'translateY(0px)'},
     { transform: 'translateY(2px)'},
@@ -262,8 +271,8 @@ image6.animate(
   ], 
     
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 1000, // 再生時間（1000ミリ秒）
+    fill: 'backwards', 
+    duration: 1000, 
   },
 );
 }
@@ -274,7 +283,7 @@ rrr();
 function rrr() {
 if( motion === 0 ) {
 image7.animate(
-  // 途中の状態を表す配列
+
   [
     { transform: 'translateY(0px)'},
     { transform: 'translateY(6px)'},
@@ -284,8 +293,8 @@ image7.animate(
   ], 
     
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 4000, // 再生時間（1000ミリ秒）
+    fill: 'backwards', 
+    duration: 4000, 
   },
 );
 }
@@ -293,27 +302,27 @@ image7.animate(
 
 function motion1() {
 image3.animate(
-  // 途中の状態を表す配列
+  
   [
-    { transform: 'rotate(15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(15deg)'}, 
     { transform: 'rotate(0deg)'}
   ], 
-  // タイミングに関する設定
+
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 500, // 再生時間（1000ミリ秒）
+    fill: 'backwards', 
+    duration: 500, 
   },
 );
 image4.animate(
-  // 途中の状態を表す配列
+
   [
-    { transform: 'rotate(-15deg)'}, // 開始時の状態（左端）
+    { transform: 'rotate(-15deg)'}, 
     { transform: 'rotate(0deg)'}
   ], 
-  // タイミングに関する設定
+  
   {
-    fill: 'backwards', // 再生前後の状態（再生前、開始時の状態を適用）
-    duration: 500, // 再生時間（1000ミリ秒）
+    fill: 'backwards', 
+    duration: 500, 
   },
 );
 }
@@ -362,5 +371,123 @@ document.getElementById( 'img' ).style.left = stageX + "px";
 document.getElementById( 'img2' ).style.left = SHL + "px";
 document.getElementById( 'img3' ).style.left = SHL + 1440 + "px";
 document.getElementById( 'img4' ).style.left = SHL + 2880 + "px";
+document.getElementById( 'eye' ).style.left = stageX + 1400 + "px";
+document.getElementById( 'eye' ).style.top = 400 + "px";
+document.getElementById( 'area' ).style.left = 100 + "px";
+document.getElementById( 'area' ).style.top = 600 + "px";
 }
 let intervalI = setInterval(stagelink, 1);
+
+var nowtext = 3;
+
+function Z1() {
+var key_code = event.keyCode;
+	if( key_code === 90 ) {
+        ws = 0;
+	if(nowtext === 3) {
+	  nowtext -= 3;
+        ws = 0;
+	if(lr === -1) poteto3();
+	if(lr === 1) poteto();
+	} else {
+	  nowtext += 1;
+        if(nowtext === 3) {
+	if(lr === 1) poteto2();
+	if(lr === -1) poteto4();
+        ws = 10;
+        }
+	}
+	document.getElementById("area").innerText = array[nowtext];
+        }
+}
+
+
+function Z() {
+if(Math.sqrt( Math.pow( stageX+1100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === 1) {
+Z1();
+}
+}
+if(Math.sqrt( Math.pow( stageX+1400-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === -1) {
+Z1();
+}
+
+}
+
+}
+
+
+var array = ['Eye"Hi,I am Isaac."', 'Stick"I am Stick."', 'He is nice guy.','　'];
+addEventListener( "keydown", Z );
+
+
+function poteto() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(0deg)' }, 
+    { transform: 'rotate(15deg)' } 
+  ], 
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(15deg)`;
+
+}
+
+function poteto2() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(15deg)' }, 
+    { transform: 'rotate(0deg)' } 
+  ], 
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(0deg)`;
+
+}
+function poteto3() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(0deg)' }, 
+    { transform: 'rotate(-15deg)' } 
+  ], 
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(-15deg)`;
+}
+
+function poteto4() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(-15deg)' }, 
+    { transform: 'rotate(0deg)' } 
+  ], 
+
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(0deg)`;
+}
