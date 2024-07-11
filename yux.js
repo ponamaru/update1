@@ -90,10 +90,10 @@ if(ws != 0) {
 lr = 1;
 cos4();
 cos2();
+}
 if( motion != 0 ) {
 motion = 1;
 walk();
-}
 }
 }
 if( key_code === 16 )  {
