@@ -96,8 +96,9 @@ motion = 1;
 walk();
 }
 }
-if( key_code === 16 )  ws = 5;
-    
+if( key_code === 16 )  {
+if(ws != 0) ws = 5;
+}
 }
 function cos() {
     const changeimg = document.getElementById("stickeye");
@@ -124,19 +125,27 @@ addEventListener( "keyup", keyupfunc1 );
 function keyupfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
+if(ws != 0) {
 motion = 0;
 if(ws != 0) {
 rrr();
+}
 }
 }
 if( key_code === 39 ) {
+if(ws != 0) {
 motion = 0;
 if(ws != 0) {
 rrr();
 }
 }
-if( key_code === 16 )  ws = 10;
+}
+if( key_code === 16 )  {
+if(ws != 0) {
+ws = 10;
 if(ws != 0) motion = 0;
+}
+}
 }
 const image = document.getElementById('rightleg');
 const image2 = document.getElementById('leftleg'); 
@@ -352,6 +361,7 @@ if(stageX < leftend) {
         }
         }
 if( key_code === 16 ) {
+if(ws != 0) {
 motion = 1;
 if(stageX < leftend) {
 if (lr === -1)stageX += 20;
@@ -360,6 +370,7 @@ if(stageX > rightend) {
 if (lr === 1)stageX -= 20;
     }
     }
+}
 	document.getElementById( 'img' ).style.top = stageY + "px";
 	document.getElementById( 'img' ).style.left = stageX + "px";
 }
