@@ -79,10 +79,8 @@ if(ws != 0) {
 lr = -1;
 cos3(); cos(); 
 document.getElementById( 'stickhead' ).style.left = x + "px";
-if( motion != 0 ) {
 motion = 1;
 walk();
-}
 }
 }
 if( key_code === 39 ) {
@@ -91,10 +89,8 @@ lr = 1;
 cos4();
 cos2();
 }
-if( motion != 0 ) {
 motion = 1;
 walk();
-}
 }
 if( key_code === 16 )  {
 if(ws != 0) ws = 5;
