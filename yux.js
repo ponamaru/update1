@@ -350,15 +350,19 @@ if(walking === 2){
 	if( key_code === 40 ) alert(stageX)
 if(stageX > rightend) {
 	if( key_code === 39 ) {
+	if(ws != 0) {
         if( ws === 10 )stageX -= 10;
         if( ws === 5 )stageX -= 20;
         }
+	}
 }
 if(stageX < leftend) {
+	if(ws != 0) {
 	if( key_code === 37 ) {
         if( ws === 10 )stageX += 10;
         if( ws === 5 )stageX += 20;
         }
+	}
         }
 if( key_code === 16 ) {
 if(ws != 0) {
