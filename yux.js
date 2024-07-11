@@ -80,7 +80,6 @@ lr = -1;
 cos3(); cos(); 
 document.getElementById( 'stickhead' ).style.left = x + "px";
 motion = 1;
-walk();
 }
 }
 if( key_code === 39 ) {
@@ -90,7 +89,6 @@ cos4();
 cos2();
 }
 motion = 1;
-walk();
 }
 if( key_code === 16 )  {
 if(ws != 0) ws = 5;
