@@ -79,10 +79,10 @@ if(ws != 0) {
 lr = -1;
 cos3(); cos(); 
 document.getElementById( 'stickhead' ).style.left = x + "px";
-}
 if( motion != 1 ) {
 motion = 1;
 walk();
+}
 }
 }
 if( key_code === 39 ) {
