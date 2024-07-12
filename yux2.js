@@ -7,6 +7,8 @@ document.write( '<div id="stickface" class="item2"><div class="item rotateX" id=
 
 document.write( '<img src="car.png" class="ti0" id="eye" width="250">' );
 document.write( '<img src="rico.png" class="ti0" id="eye2" width="250">' );
+document.write( '<img src="melon.png" id="bread" width="250">' );
+document.getElementById( 'bread' ).style.display = 'none';
 
 var y = 300;
 var x = 500;
@@ -151,7 +153,7 @@ const image4 = document.getElementById('leftleg');
 const image5 = document.getElementById('face2'); 
 const image6 = document.getElementById('face2'); 
 const image7 = document.getElementById('face2'); 
-
+addEventListener( "keydown", a );
 function walk() {
 if (motion === 1) {
 if (ws === 10) {
@@ -373,6 +375,7 @@ var fun = 1;
 
 let intervaI = setInterval(ee8, 1);
 
+
 function ee8() {
 if( fun === 1 ) {
 document.getElementById( 'eye' ).style.display = 'none';
@@ -408,8 +411,37 @@ const changeimg = document.getElementById("eye");
 if( stageX > -80 ) fun = 5;
 }
 if( fun === 5 ) {
-
+document.getElementById( 'bread' ).style.display = 'block';
+document.getElementById( 'bread' ).style.display = 'block';
+document.getElementById( 'bread' ).style.top = 500 + "px";
+document.getElementById( 'bread' ).style.left = stageX + 2200 + "px";
 if( stageX < -1330 ) fun = 6;
 }
+if( fun === 6 ) {
+document.getElementById( 'bread' ).style.display = 'block';
+document.getElementById( 'bread' ).style.top = 500 + "px";
+document.getElementById( 'bread' ).style.left = stageX + 2200 + "px";
 
+}
+}
+
+
+function a(event) {
+var key_code = event.keyCode;
+if(key_code === 90) {
+if(fun === 6) {
+if(Math.sqrt( Math.pow( stageX+1800-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === 1) {
+fadeout();
+ws = 0;
+}
+}
+if(Math.sqrt( Math.pow( stageX+2100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === -1) {
+fadeout();
+ws = 0;
+}
+}
+}
+}
 }
