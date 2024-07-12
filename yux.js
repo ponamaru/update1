@@ -89,9 +89,9 @@ if(ws != 0) {
 lr = 1;
 cos4();
 cos2();
-}
 if( motion != 1 ) {
 motion = 1;
+}
 }
 }
 if( key_code === 16 )  {
