@@ -1,3 +1,5 @@
+document.write( '<img src="無題.png" id="ims" width="800">' );
+
 document.write( '<div class="fadein2"><img src="black2.png" id="fadein" class="fadein" width="120%" height="100%"></div>' );
 document.write( '<img src="black2.png" id="black" class="op0" width="120%" height="100%">' );
 document.write( '<img src="stick.png" id="stickbody" width="600">' );
@@ -9,7 +11,6 @@ document.write( '<img src="car.png" class="ti0" id="eye" width="250">' );
 document.write( '<img src="rico.png" class="ti0" id="eye2" width="250">' );
 document.write( '<img src="melon.png" id="bread" width="250">' );
 document.getElementById( 'bread' ).style.display = 'none';
-document.write( '<img src="無題.png" id="ims" width="800">' );
 
 var y = 300;
 var x = 500;
@@ -370,7 +371,7 @@ document.getElementById( 'img2' ).style.left = SHL + "px";
 document.getElementById( 'img3' ).style.left = SHL + 1440 + "px";
 document.getElementById( 'img4' ).style.left = SHL + 2880 + "px";
 document.getElementById( 'hidetxt' ).style.left = stageX + "px";
-document.getElementById( 'ims' ).style.top = 200 + "px";
+document.getElementById( 'ims' ).style.top = 10 + "px";
 document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
 }
 let intervalI = setInterval(stagelink, 1);
