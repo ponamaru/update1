@@ -444,14 +444,20 @@ if(key_code === 90) {
 if(fun === 6) {
 if(Math.sqrt( Math.pow( stageX+1800-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
 if(lr === 1) {
+if(ws != 0) {
 fadeout();
 ws = 0;
+af();
+}
 }
 }
 if(Math.sqrt( Math.pow( stageX+2100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
 if(lr === -1) {
+if(ws != 0) {
 fadeout();
 ws = 0;
+af();
+}
 }
 }
 }
@@ -465,18 +471,22 @@ if(key_code === 90) {
 if(fun === 6) {
 if(Math.sqrt( Math.pow( stageX+1800-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
 if(lr === 1) {
+if(ws != 0) {
 poteto();
 fadeout();
 ws = 0;
 af();
 }
 }
+}
 if(Math.sqrt( Math.pow( stageX+2100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
 if(lr === -1) {
+if(ws != 0) {
 poteto3();
 fadeout();
 ws = 0;
 af();
+}
 }
 }
 }
