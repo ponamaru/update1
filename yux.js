@@ -389,7 +389,7 @@ document.getElementById( 'eye' ).style.left = stageX + 1400 + "px";
 document.getElementById( 'eye' ).style.top = 400 + "px";
 document.getElementById( 'area' ).style.left = 100 + "px";
 document.getElementById( 'area' ).style.top = 600 + "px";
-document.getElementById( 'ims' ).style.top = stageX + 200 + "px";
+document.getElementById( 'ims' ).style.top = 200 + "px";
 document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
 }
 let intervalI = setInterval(stagelink, 1);
