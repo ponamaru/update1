@@ -389,6 +389,7 @@ if( fun === 2 ) {
 document.getElementById( 'eye' ).style.display = 'block';
 document.getElementById( 'eye' ).style.left = stageX + 400 + "px";
 document.getElementById( 'eye' ).style.top = 370 + "px";
+document.getElementById( 'ims' ).style.display = 'none';
 if( stageX > -80 ) fun = 3;
 }
 if( fun === 3 ){
