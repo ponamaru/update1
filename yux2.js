@@ -437,34 +437,6 @@ document.getElementById( 'bread' ).style.left = stageX + 2200 + "px";
 }
 }
 
-
-function a(event) {
-var key_code = event.keyCode;
-if(key_code === 90) {
-if(fun === 6) {
-if(Math.sqrt( Math.pow( stageX+1800-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
-if(lr === 1) {
-if(ws != 0) {
-fadeout();
-ws = 0;
-af();
-}
-}
-}
-if(Math.sqrt( Math.pow( stageX+2100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
-if(lr === -1) {
-if(ws != 0) {
-fadeout();
-ws = 0;
-af();
-}
-}
-}
-}
-}
-}
-
-
 function a(event) {
 var key_code = event.keyCode;
 if(key_code === 90) {
