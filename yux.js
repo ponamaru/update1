@@ -1,10 +1,10 @@
+document.write( '<img src="無題.png" id="ims" width="800">' );
 document.write( '<div class="fadein2"><img src="black2.png" id="fadein" class="fadein" width="120%" height="100%"></div>' );
 document.write( '<img src="black2.png" id="black" class="op0" width="120%" height="100%">' );
 document.write( '<img src="stick.png" id="stickbody" width="600">' );
 document.write( '<img src="stick.png" id="leftleg" class="leftleg" width="600">' );
 document.write( '<img src="stick.png" id="rightleg" class="rightleg" width="600">' );
 document.write( '<div id="stickface" class="item2"><div class="item rotateX" id="face2" width="600"><img src="stickhead.png" id="stickhead" type="file1" class="red" width="600"><div class="re-wrap" id="stickeye3"><img src="stickeye3.png" id="stickeye" class="re" width="600"></div></div></div>' );
-document.write( '<img src="無題.png" id="ims" width="800">' );
 
 var y = 300;
 var x = 500;
@@ -389,7 +389,7 @@ document.getElementById( 'eye' ).style.left = stageX + 1400 + "px";
 document.getElementById( 'eye' ).style.top = 400 + "px";
 document.getElementById( 'area' ).style.left = 100 + "px";
 document.getElementById( 'area' ).style.top = 600 + "px";
-document.getElementById( 'ims' ).style.top = 200 + "px";
+document.getElementById( 'ims' ).style.top = 10 + "px";
 document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
 }
 let intervalI = setInterval(stagelink, 1);
