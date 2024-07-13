@@ -7,6 +7,13 @@ document.write( '<img src="stick.png" id="leftleg" class="leftleg" width="600">'
 document.write( '<img src="stick.png" id="rightleg" class="rightleg" width="600">' );
 document.write( '<div id="stickface" class="item2"><div class="item rotateX" id="face2" width="600"><img src="stickhead.png" id="stickhead" type="file1" class="red" width="600"><div class="re-wrap" id="stickeye3"><img src="stickeye3.png" id="stickeye" class="re" width="600"></div></div></div>' );
 
+const audio = new Audio('c.mp3');
+ 
+addEventListener('click', () => {
+audio.play();
+audio.loop = true;
+});
+
 document.write( '<img src="car.png" class="ti0" id="eye" width="250">' );
 document.write( '<img src="rico.png" class="ti0" id="eye2" width="250">' );
 document.write( '<img src="melon.png" id="bread" width="250">' );
@@ -461,6 +468,7 @@ if(lr === 1) {
 poteto();
 fadeout();
 ws = 0;
+af();
 }
 }
 if(Math.sqrt( Math.pow( stageX+2100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
@@ -468,6 +476,7 @@ if(lr === -1) {
 poteto3();
 fadeout();
 ws = 0;
+af();
 }
 }
 }
@@ -517,7 +526,6 @@ poteto3();
 
 
 var array = ['Eye"Hi,I am Isaac."', 'Stick"I am Stick."', 'He is nice guy.',''];
-
 
 function poteto() {
 const image = document.getElementById('face2'); 
@@ -589,3 +597,19 @@ const image2 = document.getElementById('face2');
 image2.style.transform = `rotate(0deg)`;
 }
 
+function af() {
+let timerid = setInterval( ()=>{
+
+  if( (audio.volume - 0.1) <= 0 ){
+    audio.volume = 0;
+    audio.pause();
+audio.currentTime = 0; 
+    clearInterval(timerid); 
+  }
+
+  else{
+    audio.volume -= 0.1;
+  }
+}
+, 200); 
+}
