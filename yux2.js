@@ -25,11 +25,12 @@ var walking = 2;
 
 function bodylink() {
 
-document.getElementById( 'face2' ).style.top = y + "px";
-document.getElementById( 'face2' ).style.left = x + "px";
+document.getElementById( 'stickhead' ).style.top = y + "px";
+document.getElementById( 'stickhead' ).style.left = x + "px";
     
-document.getElementById( 'stickeye3' ).style.top = -40 + "px";
-
+document.getElementById( 'stickeye3' ).style.top = y -40 + "px";
+document.getElementById( 'stickeye3' ).style.left = x + "px";
+	
 document.getElementById( 'stickbody' ).style.top = y -30 + "px";
 document.getElementById( 'stickbody' ).style.left = x -15 + "px";
 
@@ -83,7 +84,6 @@ function keydownfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
 cos3(); cos(); lr = -1;
-document.getElementById( 'face2' ).style.left = x + "px";
 if( motion != 1 ) {
 motion = 1;
 walk();
@@ -152,9 +152,9 @@ const image = document.getElementById('rightleg');
 const image2 = document.getElementById('leftleg');
 const image3 = document.getElementById('rightleg'); 
 const image4 = document.getElementById('leftleg'); 
-const image5 = document.getElementById('face2'); 
-const image6 = document.getElementById('face2'); 
-const image7 = document.getElementById('face2'); 
+const image5 = document.getElementById('stickface'); 
+const image6 = document.getElementById('stickface'); 
+const image7 = document.getElementById('stickface'); 
 addEventListener( "keydown", a );
 function walk() {
 if (motion === 1) {
@@ -450,3 +450,142 @@ ws = 0;
 }
 }
 }
+
+
+function a(event) {
+var key_code = event.keyCode;
+if(key_code === 90) {
+if(fun === 6) {
+if(Math.sqrt( Math.pow( stageX+1800-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === 1) {
+poteto();
+fadeout();
+ws = 0;
+}
+}
+if(Math.sqrt( Math.pow( stageX+2100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === -1) {
+poteto3();
+fadeout();
+ws = 0;
+}
+}
+}
+}
+}
+
+var nowtext = 3;
+
+function Z1() {
+var key_code = event.keyCode;
+	if( key_code === 90 ) {
+        ws = 0;
+	if(nowtext === 3) {
+	  nowtext -= 3;
+        ws = 0;
+	if(lr === -1) poteto3();
+	if(lr === 1) poteto();
+	} else {
+	  nowtext += 1;
+        if(nowtext === 3) {
+	if(lr === 1) poteto2();
+	if(lr === -1) poteto4();
+        ws = 10;
+        }
+	}
+	document.getElementById("area").innerText = array[nowtext];
+        }
+}
+
+
+function Z() {
+if(Math.sqrt( Math.pow( stageX+1100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === 1) {
+Z1();
+poteto();
+}
+}
+if(Math.sqrt( Math.pow( stageX+1400-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
+if(lr === -1) {
+Z1();
+poteto3();
+}
+
+}
+
+}
+
+
+var array = ['Eye"Hi,I am Isaac."', 'Stick"I am Stick."', 'He is nice guy.',''];
+
+
+function poteto() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(0deg)' }, 
+    { transform: 'rotate(15deg)' } 
+  ], 
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(15deg)`;
+
+}
+
+function poteto2() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(15deg)' }, 
+    { transform: 'rotate(0deg)' } 
+  ], 
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(0deg)`;
+
+}
+function poteto3() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(0deg)' }, 
+    { transform: 'rotate(-15deg)' } 
+  ], 
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(-15deg)`;
+}
+
+function poteto4() {
+const image = document.getElementById('face2'); 
+
+image.animate(
+  [
+    { transform: 'rotate(-15deg)' }, 
+    { transform: 'rotate(0deg)' } 
+  ], 
+
+  {
+    fill: 'backwards', 
+    duration: 250,  
+  },
+);
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(0deg)`;
+}
+
