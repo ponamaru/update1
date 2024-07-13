@@ -7,7 +7,7 @@ document.write( '<img src="stick.png" id="leftleg" class="leftleg" width="600">'
 document.write( '<img src="stick.png" id="rightleg" class="rightleg" width="600">' );
 document.write( '<div id="stickface" class="item2"><div class="item rotateX" id="face2" width="600"><img src="stickhead.png" id="stickhead" type="file1" class="red" width="600"><div class="re-wrap" id="stickeye3"><img src="stickeye3.png" id="stickeye" class="re" width="600"></div></div></div>' );
 
-const audio = new Audio('c.mp3');
+const audio = new Audio('デジャブプール.mp3');
  
 addEventListener('click', () => {
 audio.play();
