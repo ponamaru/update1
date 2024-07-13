@@ -371,7 +371,7 @@ document.getElementById( 'img3' ).style.left = SHL + 1440 + "px";
 document.getElementById( 'img4' ).style.left = SHL + 2880 + "px";
 document.getElementById( 'hidetxt' ).style.left = stageX + "px";
 document.getElementById( 'ims' ).style.top = 200 + "px";
-document.getElementById( 'ims' ).style.left = 100 + "px";
+document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
 }
 let intervalI = setInterval(stagelink, 1);
 var fun = 1;
