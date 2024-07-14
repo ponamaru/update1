@@ -1,6 +1,6 @@
 document.write( '<img src="無題.png" id="ims" width="800">' );
 
-document.write( '<div class="fadein2"><img src="black2.png" id="fadein" class="fadein" width="120%" height="100%"></div>' );
+document.write( '<div class="fadein2"><img src="black2.png" id="fadein" class="fadein" width="120%" height="120%"></div>' );
 document.write( '<img src="black2.png" id="black" class="op0" width="120%" height="100%">' );
 document.write( '<img src="stick.png" id="stickbody" width="600">' );
 document.write( '<img src="stick.png" id="leftleg" class="leftleg" width="600">' );
