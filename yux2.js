@@ -362,34 +362,41 @@ let intervalId2 = setInterval(rrr, 4000);
 
 var leftend = 670;
 var rightend = -1990;
+var le2 = 670;
+var re2 = -1990;
 
 addEventListener( "keydown", keydownfunc2 );
 
 function keydownfunc2( event ) {
+	var key_code = event.keyCode;
+	if( key_code === 40 ) alert(stageX)
+	if( key_code === 38 ) alert(x);
 if(walking === 2){
 	var key_code = event.keyCode;
 	if( key_code === 40 ) alert(stageX)
-	if( key_code === 38 ) alert(ws);
-
-if(stageX > rightend) {
+if(stageX > re2) {
 	if( key_code === 39 ) {
+	if(ws != 0) {
         if( ws === 10 )stageX -= 10;
         if( ws === 5 )stageX -= 20;
         }
+	}
 }
-if(stageX < leftend) {
+if(stageX < le2) {
+	if(ws != 0) {
 	if( key_code === 37 ) {
         if( ws === 10 )stageX += 10;
         if( ws === 5 )stageX += 20;
         }
+	}
         }
 if( key_code === 16 ) {
 if(ws != 0) {
 motion = 1;
-if(stageX < leftend) {
+if(stageX < le2) {
 if (lr === -1)stageX += 20;
 }
-if(stageX > rightend) {
+if(stageX > re2) {
 if (lr === 1)stageX -= 20;
     }
     }
@@ -397,6 +404,114 @@ if (lr === 1)stageX -= 20;
 	document.getElementById( 'img' ).style.top = stageY + "px";
 	document.getElementById( 'img' ).style.left = stageX + "px";
 }
+if(walking === 1){
+	var key_code = event.keyCode;
+if (lr === 1) {
+if(stageX > rightend) {
+	if( key_code === 39 ) {
+if( x > 490 ) {
+if(stageX < 1990) {
+        if( ws === 10 )stageX -= 10;
+        if( ws === 5 )stageX -= 20;
+}
+}
+        }
+}else{
+if(x > 490) {
+	if( key_code === 39 ) {
+if(x < 1100) {
+        if( ws === 10 )x += 10;
+        if( ws === 5 )x += 20;
+        }
+}
+}
+}
+if(x < 500) {
+	if( key_code === 39 ) {
+if(x < 1100) {
+        if( ws === 10 )x += 10;
+        if( ws === 5 )x += 20;
+        }
+}
+}
+}
+if (lr === -1) {
+if(stageX < leftend) {
+if( x < 510 ) {
+if(stageX < 0) {
+	if( key_code === 37 ) {
+        if( ws === 10 )stageX += 10;
+        if( ws === 5 )stageX += 20;
+        }
+}
+}
+}else{
+if(x < 510) {
+	if( key_code === 37 ) {
+if( x > -180 ) {
+        if( ws === 10 )x -= 10;
+        if( ws === 5 )x -= 20;
+}
+        }
+}
+}
+if(x > 490) {
+	if( key_code === 37 ) {
+        if( ws === 10 )x -= 10;
+        if( ws === 5 )x -= 20;
+}
+
+
+}
+}
+if( key_code === 16 ) {
+if(ws != 0) {
+if (lr === 1) {
+if(stageX > rightend) {
+if( x > 490 ) {
+if(stageX < 1990) {
+        stageX -= 20;
+}
+        }
+}else{
+if(x > 490) {
+if(x < 1100) {
+        x += 20;
+}
+}
+}
+if(x < 500) {
+
+        x += 20;
+        
+}
+}
+if (lr === -1) {
+if(stageX < leftend) {
+if( x < 510 ) {
+if(stageX < 0) {
+        stageX += 20;
+}
+}
+}else{
+if(x < 510) {
+
+if( x > -180 ) {
+x -= 20;
+
+        }
+}
+}
+if(x > 490) {
+        x -= 20;
+}
+}
+    }
+}
+
+}
+
+
 }
 
 document.getElementById( 'bread' ).style.display = 'none';
@@ -590,6 +705,7 @@ const changeimg6 = document.getElementById("img4");
         ws = 10;
 screenout(); //8screen
 fun = 8;
+walking = 1;
  window.setTimeout(fadein, 1000);
 const audio = new Audio('Null 11.mp3');
    audio.volume = 1;
