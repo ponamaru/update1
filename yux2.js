@@ -56,6 +56,10 @@ function fadeout() {
     element.classList.remove("fadein");
     element.classList.add("fadeout");
   }
+  if (element.classList.contains("op0")) {
+    element.classList.remove("op0");
+    element.classList.add("fadeout");
+  }
 }
 
 function fadein() {
@@ -64,20 +68,32 @@ function fadein() {
     element.classList.remove("fadeout");
     element.classList.add("fadein");
   }
-}
-
-function screenout() {
-  const element = document.getElementById("black");
   if (element.classList.contains("op1")) {
     element.classList.remove("op1");
-    element.classList.add("op0");
+    element.classList.add("fadein");
   }
 }
 
 function screenin() {
-  const element = document.getElementById("black");
+  const element = document.getElementById("fadein");
+  if (element.classList.contains("op1")) {
+    element.classList.remove("op1");
+    element.classList.add("op0");
+  }
+  if (element.classList.contains("fadeout")) {
+    element.classList.remove("fadeout");
+    element.classList.add("op0");
+  }
+}
+
+function screenout() {
+  const element = document.getElementById("fadein");
   if (element.classList.contains("op0")) {
     element.classList.remove("op0");
+    element.classList.add("op1");
+  }
+  if (element.classList.contains("fadein")) {
+    element.classList.remove("fadein");
     element.classList.add("op1");
   }
 }
@@ -588,7 +604,7 @@ image2.style.transform = `rotate(0deg)`;
 
 }
 
-var array = ['Eye"Hi,I am Isaac."', 'Stick"I am Stick."', 'He is nice guy.',''];
+var array = ['I don`t want this.', 'But I must eat this.', 'I must not leave food on the plate.',''];
 
 function poteto() {
 const image = document.getElementById('face2'); 
