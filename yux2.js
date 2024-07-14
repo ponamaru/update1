@@ -378,8 +378,6 @@ document.getElementById( 'img2' ).style.left = SHL + "px";
 document.getElementById( 'img3' ).style.left = SHL + 1440 + "px";
 document.getElementById( 'img4' ).style.left = SHL + 2880 + "px";
 document.getElementById( 'hidetxt' ).style.left = stageX + "px";
-document.getElementById( 'ims' ).style.top = 10 + "px";
-document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
 }
 let intervalI = setInterval(stagelink, 1);
 var fun = 1;
@@ -391,6 +389,8 @@ function ee8() {
 if( fun === 1 ) {
 document.getElementById( 'eye' ).style.display = 'none';
 document.getElementById( 'eye2' ).style.display = 'none';
+document.getElementById( 'ims' ).style.top = 10 + "px";
+document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
 if( stageX < -1330 ) fun = 2;
 }
 if( fun === 2 ) {
@@ -423,6 +423,11 @@ const changeimg = document.getElementById("eye");
 if( stageX > -80 ) fun = 5;
 }
 if( fun === 5 ) {
+const changeimg2 = document.getElementById("ims");
+    changeimg2.src = "zkey.png";
+
+document.getElementById( 'ims' ).style.display = 'block';
+document.getElementById( 'ims' ).style.left = stageX + 1600 + "px";
 document.getElementById( 'bread' ).style.display = 'block';
 document.getElementById( 'bread' ).style.display = 'block';
 document.getElementById( 'bread' ).style.top = 500 + "px";
@@ -433,7 +438,7 @@ if( fun === 6 ) {
 document.getElementById( 'bread' ).style.display = 'block';
 document.getElementById( 'bread' ).style.top = 500 + "px";
 document.getElementById( 'bread' ).style.left = stageX + 2200 + "px";
-
+document.getElementById( 'ims' ).style.left = stageX + 1600 + "px";
 }
 }
 
