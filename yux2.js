@@ -37,7 +37,7 @@ document.getElementById( 'stickhead' ).style.left = x + "px";
     
 document.getElementById( 'stickeye3' ).style.top = y -40 + "px";
 document.getElementById( 'stickeye3' ).style.left = x + "px";
-	
+
 document.getElementById( 'stickbody' ).style.top = y -30 + "px";
 document.getElementById( 'stickbody' ).style.left = x -15 + "px";
 
@@ -102,17 +102,22 @@ var motion = 0;
 var lr = -1;
 
 addEventListener( "keydown", keydownfunc1 );
+addEventListener( "keydown", a );
 
 function keydownfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
+if(ws != 0) {
 cos3(); cos(); lr = -1;
+
 if( motion != 1 ) {
 motion = 1;
 walk();
 }
 }
+}
 if( key_code === 39 ) {
+if(ws != 0) {
 lr = 1;
 cos4();
 cos2();
@@ -121,14 +126,11 @@ motion = 1;
 walk();
 }
 }
+}
 if( key_code === 16 )  {
+if(ws != 0) {
 motion = 1;
 ws = 5;
-if(stageX < leftend) {
-if(lr === -1) stageX += 20
-}
-if(stageX > rightend) {
-if(lr === 1) stageX -= 20
 }
 }
     
@@ -159,16 +161,16 @@ function keyupfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
 motion = 0;
-rrr();
+if(ws != 0) rrr();
 }
 if( key_code === 39 ) {
 motion = 0;
-rrr();
+if(ws != 0) rrr();
 }
 if( key_code === 16 )  {
-motion = 0;
-ws = 10;
-rrr();
+if(ws != 0) motion = 0;
+if(ws != 0) ws = 10;
+if(ws != 0) rrr();
 }
 }
 const image = document.getElementById('rightleg'); 
@@ -178,7 +180,7 @@ const image4 = document.getElementById('leftleg');
 const image5 = document.getElementById('stickface'); 
 const image6 = document.getElementById('stickface'); 
 const image7 = document.getElementById('stickface'); 
-addEventListener( "keydown", a );
+
 function walk() {
 if (motion === 1) {
 if (ws === 10) {
@@ -360,8 +362,8 @@ image4.animate(
 let intervalId = setInterval(walk, 1000);
 let intervalId2 = setInterval(rrr, 4000);
 
-var leftend = 670;
-var rightend = -1990;
+var leftend = -10;
+var rightend = -1330;
 var le2 = 670;
 var re2 = -1990;
 
@@ -513,6 +515,8 @@ if(x > 490) {
 
 
 }
+
+
 
 document.getElementById( 'bread' ).style.display = 'none';
 
@@ -721,6 +725,7 @@ image2.style.transform = `rotate(0deg)`;
 }
 
 var array = ['I don`t want this.', 'But I must eat this.', 'I must not leave food on the plate.',''];
+
 
 function poteto() {
 const image = document.getElementById('face2'); 
