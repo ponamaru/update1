@@ -353,30 +353,44 @@ function keydownfunc2( event ) {
 if(walking === 2){
 	var key_code = event.keyCode;
 	if( key_code === 40 ) alert(stageX)
-	if( key_code === 38 ) alert(fun)
+	if( key_code === 38 ) alert(ws);
+
 if(stageX > rightend) {
 	if( key_code === 39 ) {
-        if( ws = 5 ) stageX -= 5;
-        if( ws =  10 ) stageX -= 5;
+        if( ws === 10 )stageX -= 10;
+        if( ws === 5 )stageX -= 20;
         }
 }
 if(stageX < leftend) {
 	if( key_code === 37 ) {
-        if( ws = 5 ) stageX += 5;
-        if( ws = 10 ) stageX += 5;
+        if( ws === 10 )stageX += 10;
+        if( ws === 5 )stageX += 20;
         }
         }
+if( key_code === 16 ) {
+if(ws != 0) {
+motion = 1;
+if(stageX < leftend) {
+if (lr === -1)stageX += 20;
+}
+if(stageX > rightend) {
+if (lr === 1)stageX -= 20;
+    }
+    }
+}
 	document.getElementById( 'img' ).style.top = stageY + "px";
 	document.getElementById( 'img' ).style.left = stageX + "px";
 }
 }
+
+document.getElementById( 'bread' ).style.display = 'none';
 
 function stagelink() {
 SHL = stageX + 1440;
 document.getElementById( 'img' ).style.left = stageX + "px";
 document.getElementById( 'img2' ).style.left = SHL + "px";
 document.getElementById( 'img3' ).style.left = SHL + 1440 + "px";
-document.getElementById( 'img4' ).style.left = SHL + 2880 + "px";
+document.getElementById( 'img4' ).style.left = stageX - 1440 + "px";
 document.getElementById( 'hidetxt' ).style.left = stageX + "px";
 }
 let intervalI = setInterval(stagelink, 1);
@@ -384,13 +398,16 @@ var fun = 1;
 
 let intervaI = setInterval(ee8, 1);
 
-
 function ee8() {
 if( fun === 1 ) {
-document.getElementById( 'eye' ).style.display = 'none';
-document.getElementById( 'eye2' ).style.display = 'none';
 document.getElementById( 'ims' ).style.top = 10 + "px";
 document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
+document.getElementById( 'eye' ).style.display = 'none';
+document.getElementById( 'eye2' ).style.display = 'none';
+document.getElementById( 'movies' ).style.display = 'none';
+document.getElementById( 'area' ).style.display = 'none';
+document.getElementById( 'img4' ).style.display = 'none';
+document.getElementById( 'area' ).style.top = 650 + "px";
 if( stageX < -1330 ) fun = 2;
 }
 if( fun === 2 ) {
@@ -435,11 +452,20 @@ document.getElementById( 'bread' ).style.left = stageX + 2200 + "px";
 if( stageX < -1330 ) fun = 6;
 }
 if( fun === 6 ) {
-document.getElementById( 'bread' ).style.display = 'block';
+document.getElementById( 'bread' ).style.display = 'block'; //funevent
 document.getElementById( 'bread' ).style.top = 500 + "px";
 document.getElementById( 'bread' ).style.left = stageX + 2200 + "px";
 document.getElementById( 'ims' ).style.left = stageX + 1600 + "px";
 }
+if( fun === 8 ) {
+document.getElementById( 'movies' ).style.display = 'none';
+document.getElementById( 'area' ).style.display = 'none';
+document.getElementById( 'ims' ).style.display = 'none';
+document.getElementById( 'bread' ).style.display = 'none';
+document.getElementById( 'eye' ).style.display = 'none';
+document.getElementById( 'eye2' ).style.display = 'none';
+}
+
 }
 
 function a(event) {
@@ -453,6 +479,7 @@ poteto();
 fadeout();
 ws = 0;
 af();
+ window.setTimeout(movie, 3000);
 }
 }
 }
@@ -463,6 +490,7 @@ poteto3();
 fadeout();
 ws = 0;
 af();
+ window.setTimeout(movie, 3000);
 }
 }
 }
@@ -470,7 +498,21 @@ af();
 }
 }
 
-var nowtext = 3;
+var nowtext = -1;
+
+function movie() {
+if(fun = 6) {
+fun = 7;
+document.getElementById( 'img4' ).style.display = 'block';
+document.getElementById( 'movies' ).style.display = 'block';
+fadein();
+ window.setTimeout(text, 3000);
+}
+}
+
+function text() {
+document.getElementById( 'area' ).style.display = 'block';
+}
 
 function Z1() {
 var key_code = event.keyCode;
@@ -499,18 +541,52 @@ if(Math.sqrt( Math.pow( stageX+1100-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
 if(lr === 1) {
 Z1();
 poteto();
+
 }
 }
 if(Math.sqrt( Math.pow( stageX+1400-x, 2 ) + Math.pow( 400-y, 2 ) ) < 200) {
 if(lr === -1) {
 Z1();
 poteto3();
-}
 
 }
 
 }
 
+}
+
+addEventListener( "keydown", Z2 );
+
+function Z2() {
+var key_code = event.keyCode;
+	if( key_code === 90 ) {
+if(fun === 7) {
+	  nowtext += 1;
+        if(nowtext === 3) {
+const changeimg3 = document.getElementById("img");
+    changeimg3.src = "stage4.png";
+const changeimg4 = document.getElementById("img2");
+    changeimg4.src = "stage4.png";
+const changeimg5 = document.getElementById("img3");
+    changeimg5.src = "stage4.png";
+const changeimg6 = document.getElementById("img4");
+    changeimg6.src = "stage4.png";
+        ws = 10;
+screenout(); //8screen
+fun = 8;
+ window.setTimeout(fadein, 1000);
+const audio = new Audio('Null 11.mp3');
+   audio.volume = 1;
+audio.play();
+audio.loop = true;
+const image2 = document.getElementById('face2'); 
+image2.style.transform = `rotate(0deg)`;
+        }
+	document.getElementById("area").innerText = array[nowtext];
+        }
+}
+
+}
 
 var array = ['Eye"Hi,I am Isaac."', 'Stick"I am Stick."', 'He is nice guy.',''];
 
