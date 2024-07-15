@@ -3,6 +3,12 @@
   <meta charset="utf-8">
 <title>javascript</title>
 </head>
+<script>    
+  var ua = navigator.userAgent.toLowerCase();
+    if ((ua.indexOf('iphone') > 0) || (ua.indexOf('ipad') > 0) || (ua.indexOf('ipod') > 0)) {
+        window.location.href = 'for-ipad.html';
+    } 
+</script>
 <h4>Karasuma target</h4><a href="japanese.html">日本語</a>
 <p><a href="https://ponamaru.github.io/copy/">version0</a></p>
 <p><a href="1.html">version1</a></p>
