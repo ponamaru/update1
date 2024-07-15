@@ -25,7 +25,7 @@ var ws = 10;
 var stageloop = 0;
 var stageX = -90;
 var stageY = 0;
-var SHL = stageX + 1440;
+var SHL = stageX + 1430;
 var walking = 2;
 
   fadein(); 
@@ -365,7 +365,7 @@ let intervalId2 = setInterval(rrr, 4000);
 var leftend = -10;
 var rightend = -1330;
 var le2 = 670;
-var re2 = -1990;
+var re2 = -1970;
 
 addEventListener( "keydown", keydownfunc2 );
 
@@ -521,11 +521,11 @@ if(x > 490) {
 document.getElementById( 'bread' ).style.display = 'none';
 
 function stagelink() {
-SHL = stageX + 1440;
+SHL = stageX + 1430;
 document.getElementById( 'img' ).style.left = stageX + "px";
 document.getElementById( 'img2' ).style.left = SHL + "px";
-document.getElementById( 'img3' ).style.left = SHL + 1440 + "px";
-document.getElementById( 'img4' ).style.left = stageX - 1440 + "px";
+document.getElementById( 'img3' ).style.left = SHL + 1430 + "px";
+document.getElementById( 'img4' ).style.left = stageX - 1430 + "px";
 document.getElementById( 'hidetxt' ).style.left = stageX + "px";
 }
 let intervalI = setInterval(stagelink, 1);
