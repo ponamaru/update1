@@ -7,6 +7,8 @@ document.write( '<img src="stick.png" id="leftleg" class="leftleg" width="600">'
 document.write( '<img src="stick.png" id="rightleg" class="rightleg" width="600">' );
 document.write( '<div id="stickface" class="item2"><div class="item rotateX" id="face2" width="600"><img src="stickhead.png" id="stickhead" type="file1" class="red" width="600"><div class="re-wrap" id="stickeye3"><img src="stickeye3.png" id="stickeye" class="re" width="600"></div></div></div>' );
 
+document.write( '<div id="dorata"><img src="dorata2.png" id="doratabody"  width="600"><img src="dorata3.png" id="doratahead"  width="600"></div>' );
+
 const audio = new Audio('デジャブプール.mp3');
  
 addEventListener('click', () => {
@@ -581,6 +583,7 @@ let intervaI = setInterval(ee8, 1);
 
 function ee8() {
 if( fun === 1 ) {
+document.getElementById( 'dorata' ).style.display = 'none';
 document.getElementById( 'ims' ).style.top = 10 + "px";
 document.getElementById( 'ims' ).style.left = stageX + 100 + "px";
 document.getElementById( 'eye' ).style.display = 'none';
@@ -592,21 +595,23 @@ document.getElementById( 'area' ).style.top = 650 + "px";
 if( stageX < -1330 ) fun = 2;
 }
 if( fun === 2 ) {
-document.getElementById( 'eye' ).style.display = 'block';
-document.getElementById( 'eye' ).style.left = stageX + 400 + "px";
-document.getElementById( 'eye' ).style.top = 370 + "px";
+document.getElementById( 'dorata' ).style.display = 'block';
+document.getElementById( 'dorata' ).style.left = stageX + 400 + "px";
+document.getElementById( 'dorata' ).style.top = 300 + "px";
 document.getElementById( 'ims' ).style.display = 'none';
 if( stageX > -80 ) fun = 3;
 }
 if( fun === 3 ){
+
 document.getElementById( 'eye2' ).style.display = 'block';
-document.getElementById( 'eye' ).style.left = stageX + 400 + "px";
-document.getElementById( 'eye' ).style.top = 370 + "px";
+document.getElementById( 'dorata' ).style.left = stageX + 400 + "px";
+document.getElementById( 'dorata' ).style.top = 300 + "px";
 document.getElementById( 'eye2' ).style.left = stageX + 2200 + "px";
 document.getElementById( 'eye2' ).style.top = 370 + "px";
 if( stageX < -1330 ) fun = 4;
 }
 if( fun === 4 ) {
+document.getElementById( 'eye' ).style.display = 'block';
 document.getElementById( 'eye2' ).style.left = stageX + 2200 + "px";
 document.getElementById( 'eye2' ).style.top = 370 + "px";
 document.getElementById( 'eye' ).style.left = 0 + "px";
