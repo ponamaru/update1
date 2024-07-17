@@ -347,6 +347,14 @@ var jump = 0;
 
 function makita () {
         y -= 5;
+	if (element2.classList.contains("rlm")) {
+	if(stageX < leftend) {
+	if(lr === 1) stageX += 5;
+	}
+	if(stageX > rightend) {
+	if(lr === 2) stageX -= 5;
+	}
+	  }
         jump += 1;
     if(jump > 47) {
     jump = 0;
@@ -359,12 +367,21 @@ function makita () {
 let intervalmakita2;
 function makita2() {
         y += 5;
+	  if (element2.classList.contains("rlm")) {
+	if(stageX < leftend) {
+	if(lr === 1) stageX += 5;
+	}
+	if(stageX > rightend) {
+	if(lr === 2) stageX -= 5;
+	}
+	  }
         jump += 1;
     if(jump > 47) {
     jump = 0;
     clearInterval(intervalmakita2);
     }
 }
+ const element2 = document.getElementById("rightleg");
 
 function keydownfunc2( event ) {
 if(walking === 2){
