@@ -343,7 +343,6 @@ var lr = -1;
 
 addEventListener( "keydown", keydownfunc2 );
 
-var motion = 0;
 var jump = 0;
 
 function makita () {
