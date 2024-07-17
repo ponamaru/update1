@@ -373,6 +373,14 @@ var jump = 0;
 
 function makita () {
         y -= 5;
+	if (element2.classList.contains("rlm")) {
+	if(stageX < leftend) {
+	if(lr === 1) stageX += 5;
+	}
+	if(stageX > rightend) {
+	if(lr === 2) stageX -= 5;
+	}
+	  }
         jump += 1;
     if(jump > 47) {
     jump = 0;
@@ -380,11 +388,19 @@ function makita () {
     intervalmakita2 = setInterval(makita2, 5);
     }
 }
-
+ const element2 = document.getElementById("rightleg");
  let intervalmakita;
 let intervalmakita2;
 function makita2() {
         y += 5;
+	  if (element2.classList.contains("rlm")) {
+	if(stageX < leftend) {
+	if(lr === 1) stageX += 5;
+	}
+	if(stageX > rightend) {
+	if(lr === 2) stageX -= 5;
+	}
+	  }
         jump += 1;
     if(jump > 47) {
     jump = 0;
