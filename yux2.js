@@ -369,12 +369,40 @@ var re2 = -1970;
 
 addEventListener( "keydown", keydownfunc2 );
 
+var jump = 0;
+
+function makita () {
+        y -= 5;
+        jump += 1;
+    if(jump > 47) {
+    jump = 0;
+    clearInterval(intervalmakita); 
+    intervalmakita2 = setInterval(makita2, 5);
+    }
+}
+
+ let intervalmakita;
+let intervalmakita2;
+function makita2() {
+        y += 5;
+        jump += 1;
+    if(jump > 47) {
+    jump = 0;
+    clearInterval(intervalmakita2);
+    }
+}
+
 function keydownfunc2( event ) {
 	var key_code = event.keyCode;
 	if( key_code === 40 ) alert(stageX)
 	if( key_code === 38 ) alert(x);
 if(walking === 2){
 	var key_code = event.keyCode;
+	if( key_code === 38 ) {
+    if(jump === 0) {
+  intervalmakita = setInterval(makita, 5);
+    }
+} 
 	if( key_code === 40 ) alert(stageX)
 if(stageX > re2) {
 	if( key_code === 39 ) {
