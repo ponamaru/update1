@@ -375,7 +375,7 @@ var jump = 0;
 
 function makita () {
         y -= 5;
-	if (element2.classList.contains("rlm")) {
+		  if (element2.classList.contains("rlm")) {
 	if(stageX < leftend) {
 	if(lr === 1) stageX += 5;
 	}
@@ -387,12 +387,15 @@ function makita () {
     if(jump > 47) {
     jump = 0;
     clearInterval(intervalmakita); 
-    intervalmakita2 = setInterval(makita2, 5);
+    intervalmakita2 = setInterval(makita2, 10);
     }
 }
 
  let intervalmakita;
 let intervalmakita2;
+ let Lwalk;
+let Rwalk;
+
 function makita2() {
         y += 5;
 	  if (element2.classList.contains("rlm")) {
@@ -407,6 +410,10 @@ function makita2() {
     if(jump > 47) {
     jump = 0;
     clearInterval(intervalmakita2);
+    if (motion === 1) {
+    if(lr === 2) Rwalk = setInterval(rightwalk, 25);
+    if(lr === 1) Lwalk = setInterval(leftwalk, 25);
+    }
     }
 }
  const element2 = document.getElementById("rightleg");
@@ -564,7 +571,22 @@ if(x > 490) {
 
 }
 
-
+function leftwalk(){
+if(stageX < leftend) {
+        stageX += 10;
+        }
+  if (motion === 0) {
+clearInterval(Lwalk);
+  }
+}
+function rightwalk(){
+if(stageX > rightend) {
+        stageX -= 10;
+        }
+  if (motion === 0) {
+	  clearInterval(Rwalk);
+  }
+}
 
 document.getElementById( 'bread' ).style.display = 'none';
 
