@@ -395,7 +395,7 @@ function makita2() {
 function keydownfunc2( event ) {
 	var key_code = event.keyCode;
 	if( key_code === 40 ) alert(stageX)
-	if( key_code === 38 ) alert(x);
+	if( key_code === 65 ) alert(x);
 if(walking === 2){
 	var key_code = event.keyCode;
 	if( key_code === 38 ) {
