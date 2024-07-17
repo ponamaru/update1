@@ -377,10 +377,10 @@ function makita () {
         y -= 5;
 		  if (motion === 1) {
 	if(stageX < leftend) {
-	if(lr === 1) stageX += 5;
+	if(lr === -1) stageX += 5;
 	}
 	if(stageX > rightend) {
-	if(lr === 2) stageX -= 5;
+	if(lr === 1) stageX -= 5;
 	}
 	  }
         jump += 1;
@@ -400,10 +400,10 @@ function makita2() {
         y += 5;
 	  if (motion === 1) {
 	if(stageX < leftend) {
-	if(lr === 1) stageX += 5;
+	if(lr === -1) stageX += 5;
 	}
 	if(stageX > rightend) {
-	if(lr === 2) stageX -= 5;
+	if(lr === 1) stageX -= 5;
 	}
 	  }
         jump += 1;
@@ -411,8 +411,8 @@ function makita2() {
     jump = 0;
     clearInterval(intervalmakita2);
     if (motion === 1) {
-    if(lr === 2) Rwalk = setInterval(rightwalk, 25);
-    if(lr === 1) Lwalk = setInterval(leftwalk, 25);
+    if(lr === 1) Rwalk = setInterval(rightwalk, 25);
+    if(lr === -1) Lwalk = setInterval(leftwalk, 25);
     }
     }
 }
