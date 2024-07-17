@@ -388,7 +388,7 @@ function makita () {
     intervalmakita2 = setInterval(makita2, 5);
     }
 }
- const element2 = document.getElementById("rightleg");
+
  let intervalmakita;
 let intervalmakita2;
 function makita2() {
@@ -407,6 +407,8 @@ function makita2() {
     clearInterval(intervalmakita2);
     }
 }
+ const element2 = document.getElementById("rightleg");
+
 
 function keydownfunc2( event ) {
 	var key_code = event.keyCode;
