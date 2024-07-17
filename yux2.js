@@ -732,7 +732,9 @@ var key_code = event.keyCode;
 	if(lr === -1) poteto3();
 	if(lr === 1) poteto();
 	} else {
+	if(document.getElementById( 'area' ).style.display === 'block') {
 	  nowtext += 1;
+	}
         if(nowtext === 3) {
 	if(lr === 1) poteto2();
 	if(lr === -1) poteto4();
