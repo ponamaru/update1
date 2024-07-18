@@ -582,23 +582,6 @@ if(stageX < le2) {
         if( ws === 5 )stageX += 20;
 }
 }
-if(walking === 1) {
-if(stageX < leftend) {
-if( x < 510 ) {
-if(stageX < 0) {
-        if( ws === 10 )stageX += 10;
-        if( ws === 5 )stageX += 20;
-}
-}
-}else{
-if(x < 510) {
-if( x > -180 ) {
-        if( ws === 10 )x -= 10;
-        if( ws === 5 )x -= 20;
-}
-}
-}
-}
 }
 }
   if (motion === 0) {
@@ -612,23 +595,6 @@ if(walking === 2) {
 if(stageX > re2) {
         if( ws === 10 )stageX -= 10;
         if( ws === 5 )stageX -= 20;
-}
-}
-if(walking === 1) {
-if(stageX > rightend) {
-if( x > 490 ) {
-if(stageX > 1990) {
-        if( ws === 10 )stageX += 10;
-        if( ws === 5 )stageX += 20;
-}
-}
-}else{
-if(x > 490) {
-if( x < 1100 ) {
-        if( ws === 10 )x += 10;
-        if( ws === 5 )x += 20;
-}
-}
 }
 }
 }
