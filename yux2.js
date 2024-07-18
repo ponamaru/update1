@@ -17,7 +17,7 @@ audio.loop = true;
 });
 
 document.write( '<img src="car.png" class="ti0" id="eye" width="250">' );
-document.write( '<img src="rico.png" class="ti0" id="eye2" width="250">' );
+document.write( '<img src="car.png" class="ti0" id="eye2" width="250">' );
 document.write( '<img src="melon.png" id="bread" width="250">' );
 document.getElementById( 'bread' ).style.display = 'none';
 
