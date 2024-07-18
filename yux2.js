@@ -585,7 +585,7 @@ clearInterval(Lwalk);
 }
 function rightwalk(){
 if(motion === 1) {
-if(stageX > rightend) {
+if(stageX > re2) {
         stageX -= 10;
         }
 }
