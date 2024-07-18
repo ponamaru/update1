@@ -575,7 +575,7 @@ if(x > 490) {
 
 function leftwalk(){
 if(motion === 1) {
-if(stageX < 10) {
+if(stageX < le2) {
 	if( ws === 10 )stageX += 10;
         if( ws === 5 )stageX += 20;
 }
