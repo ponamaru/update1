@@ -162,10 +162,12 @@ addEventListener( "keyup", keyupfunc1 );
 function keyupfunc1( event ) {
 	var key_code = event.keyCode;
 if( key_code === 37 ) {
+clearInterval(Lwalk);
 motion = 0;
 if(ws != 0) rrr();
 }
 if( key_code === 39 ) {
+clearInterval(Rwalk);
 motion = 0;
 if(ws != 0) rrr();
 }
@@ -376,7 +378,7 @@ var jump = 0;
 function makita () {
         y -= 5;
 		  if (motion === 1) {
-	if(stageX < le2) {
+	if(stageX < 10) {
 	if(lr === -1) stageX += 5;
 	}
 	if(stageX > re2) {
@@ -399,7 +401,7 @@ let Rwalk;
 function makita2() {
         y += 5;
 	  if (motion === 1) {
-	if(stageX < le2) {
+	if(stageX < 10) {
 	if(lr === -1) stageX += 5;
 	}
 	if(stageX > re2) {
@@ -572,17 +574,21 @@ if(x > 490) {
 }
 
 function leftwalk(){
+if(motion === 1) {
 if(stageX < leftend) {
         stageX += 10;
-        }
+}
+}
   if (motion === 0) {
 clearInterval(Lwalk);
   }
 }
 function rightwalk(){
+if(motion === 1) {
 if(stageX > rightend) {
         stageX -= 10;
         }
+}
   if (motion === 0) {
 	  clearInterval(Rwalk);
   }
