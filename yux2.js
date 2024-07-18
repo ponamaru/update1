@@ -378,7 +378,7 @@ var jump = 0;
 function makita () {
         y -= 5;
 		  if (motion === 1) {
-	if(stageX < 10) {
+	if(stageX < le2) {
 	if(lr === -1) stageX += 5;
 	}
 	if(stageX > re2) {
@@ -401,7 +401,7 @@ let Rwalk;
 function makita2() {
         y += 5;
 	  if (motion === 1) {
-	if(stageX < 10) {
+	if(stageX < le2) {
 	if(lr === -1) stageX += 5;
 	}
 	if(stageX > re2) {
