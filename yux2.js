@@ -368,8 +368,8 @@ let intervalId2 = setInterval(rrr, 4000);
 
 var leftend = -10;
 var rightend = -1330;
-var le2 = 670;
-var re2 = -1970;
+var le2 = 669;
+var re2 = -1971;
 
 addEventListener( "keydown", keydownfunc2 );
 
