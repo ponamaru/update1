@@ -16,7 +16,7 @@ audio.play();
 audio.loop = true;
 });
 
-document.write( '<img src="car.png" class="ti0" id="eye" width="250">' );
+document.write( '<img src="car.png" class="ti0" id="eye" width="400">' );
 document.write( '<img src="car.png" class="ti0" id="eye2" width="250">' );
 document.write( '<img src="melon.png" id="bread" width="250">' );
 document.getElementById( 'bread' ).style.display = 'none';
@@ -661,7 +661,6 @@ document.getElementById( 'eye' ).style.top = 0 + "px";
 
 const changeimg = document.getElementById("eye");
     changeimg.src = "eye.png";
-document.getElementById( 'eye' ).style.width = 200 + "px";
 if( stageX > -80 ) fun = 5;
 }
 if( fun === 5 ) {
