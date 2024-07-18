@@ -575,9 +575,11 @@ if(x > 490) {
 
 function leftwalk(){
 if(motion === 1) {
+if(lr === -1) {
 if(stageX < le2) {
 	if( ws === 10 )stageX += 10;
         if( ws === 5 )stageX += 20;
+}
 }
 }
   if (motion === 0) {
@@ -586,10 +588,12 @@ clearInterval(Lwalk);
 }
 function rightwalk(){
 if(motion === 1) {
+if(lr === 1) {
 if(stageX > re2) {
 	if( ws === 10 )stageX -= 10;
         if( ws === 5 )stageX -= 20;
         }
+}
 }
   if (motion === 0) {
 	  clearInterval(Rwalk);
