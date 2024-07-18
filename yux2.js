@@ -661,6 +661,7 @@ document.getElementById( 'eye' ).style.top = 0 + "px";
 
 const changeimg = document.getElementById("eye");
     changeimg.src = "eye.png";
+document.getElementById( 'eye' ).style.width = 200 + "px";
 if( stageX > -80 ) fun = 5;
 }
 if( fun === 5 ) {
