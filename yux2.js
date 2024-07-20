@@ -972,7 +972,7 @@ af();
 }
 }
 
-var nowtext = 0;
+var nowtext = -1;
 
 function movie() {
 if(fun = 6) {
