@@ -416,10 +416,8 @@ if(x > 490) {
         if( ws === 10 )x -= 10;
         if( ws === 5 )x -= 20;
 
-
-
 }
-
+}
 }
 }
         jump += 1;
@@ -433,7 +431,6 @@ if(x > 490) {
  let intervalmakita;
 let intervalmakita2;
 
-	
 function makita2() {
         y += 5;
 	  if (motion === 1) {
@@ -472,7 +469,7 @@ if(x < 1100) {
         }
 }
 
-}
+
 }
 }
 }
