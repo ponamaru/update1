@@ -375,16 +375,53 @@ addEventListener( "keydown", keydownfunc2 );
 
 var jump = 0;
 
+ let Lwalk;
+let Rwalk;
+
 function makita () {
         y -= 5;
 		  if (motion === 1) {
+if(walking === 2) {
 	if(stageX < le2) {
 	if(lr === -1) stageX += 5;
 	}
 	if(stageX > re2) {
 	if(lr === 1) stageX -= 5;
 	}
-	  }
+}
+
+if(walking === 1) {
+if (lr === -1) {
+if(stageX < leftend) {
+if( x < 510 ) {
+if(stageX < 0) {
+
+        if( ws === 10 )stageX += 10;
+        if( ws === 5 )stageX += 20;
+        
+}
+}
+}else{
+if(x < 510) {
+
+if( x > -180 ) {
+        if( ws === 10 )x -= 10;
+        if( ws === 5 )x -= 20;
+}
+        
+}
+}
+if(x > 490) {
+
+        if( ws === 10 )x -= 10;
+        if( ws === 5 )x -= 20;
+
+
+
+}
+
+}
+}
         jump += 1;
     if(jump > 47) {
     jump = 0;
@@ -395,18 +432,49 @@ function makita () {
 
  let intervalmakita;
 let intervalmakita2;
- let Lwalk;
-let Rwalk;
 
 function makita2() {
         y += 5;
 	  if (motion === 1) {
+if(walking === 2) {
 	if(stageX < le2) {
 	if(lr === -1) stageX += 5;
 	}
 	if(stageX > re2) {
 	if(lr === 1) stageX -= 5;
 	}
+if(walking === 1) {
+if (lr === 1) {
+if(stageX > rightend) {
+
+if( x > 490 ) {
+if(stageX < 1990) {
+        if( ws === 10 )stageX -= 10;
+        if( ws === 5 )stageX -= 20;
+}
+        }
+}else{
+if(x > 490) {
+
+if(x < 1100) {
+        if( ws === 10 )x += 10;
+        if( ws === 5 )x += 20;
+        }
+
+}
+}
+if(x < 500) {
+
+if(x < 1100) {
+        if( ws === 10 )x += 10;
+        if( ws === 5 )x += 20;
+        }
+}
+
+}
+}
+}
+}
 	  }
         jump += 1;
     if(jump > 47) {
@@ -465,6 +533,12 @@ if (lr === 1)stageX -= 20;
 }
 if(walking === 1){
 	var key_code = event.keyCode;
+	if( key_code === 38 ) {
+    if(jump === 0) {
+  intervalmakita = setInterval(makita, 5);
+    }
+} 
+
 if (lr === 1) {
 if(stageX > rightend) {
 	if( key_code === 39 ) {
@@ -582,6 +656,38 @@ if(stageX < le2) {
         if( ws === 5 )stageX += 20;
 }
 }
+if(walking === 1) {
+if (lr === -1) {
+if(stageX < leftend) {
+if( x < 510 ) {
+if(stageX < 0) {
+
+        if( ws === 10 )stageX += 10;
+        if( ws === 5 )stageX += 20;
+        
+}
+}
+}else{
+if(x < 510) {
+
+if( x > -180 ) {
+        if( ws === 10 )x -= 10;
+        if( ws === 5 )x -= 20;
+}
+        
+}
+}
+if(x > 490) {
+
+        if( ws === 10 )x -= 10;
+        if( ws === 5 )x -= 20;
+
+
+
+}
+}
+}
+
 }
 }
   if (motion === 0) {
@@ -597,12 +703,44 @@ if(stageX > re2) {
         if( ws === 5 )stageX -= 20;
 }
 }
+if(walking === 1) {
+if (lr === 1) {
+if(stageX > rightend) {
+
+if( x > 490 ) {
+if(stageX < 1990) {
+        if( ws === 10 )stageX -= 10;
+        if( ws === 5 )stageX -= 20;
+}
+        }
+}else{
+if(x > 490) {
+
+if(x < 1100) {
+        if( ws === 10 )x += 10;
+        if( ws === 5 )x += 20;
+        }
+
+}
+}
+if(x < 500) {
+
+if(x < 1100) {
+        if( ws === 10 )x += 10;
+        if( ws === 5 )x += 20;
+        }
+}
+
+}
+}
+
 }
 }
   if (motion === 0) {
 	  clearInterval(Rwalk);
   }
 }
+
 
 document.getElementById( 'bread' ).style.display = 'none';
 
