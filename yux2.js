@@ -422,7 +422,7 @@ if(x > 490) {
 }
         jump += 1;
     if(jump > 47) {
-    jump = 0;
+    jump = 1;
     clearInterval(intervalmakita); 
     intervalmakita2 = setInterval(makita2, 10);
     }
@@ -476,7 +476,7 @@ if(x < 1100) {
 	  }
         jump += 1;
     if(jump > 47) {
-    jump = 0;
+    jump = 0; y += 5;
     clearInterval(intervalmakita2);
     if (motion === 1) {
     if(lr === 1) Rwalk = setInterval(rightwalk, 25);
