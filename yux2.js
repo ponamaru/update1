@@ -972,7 +972,7 @@ af();
 }
 }
 
-var nowtext = -1;
+var nowtext = 0;
 
 function movie() {
 if(fun = 6) {
@@ -1037,7 +1037,9 @@ function Z2() {
 var key_code = event.keyCode;
 	if( key_code === 90 ) {
 if(fun === 7) {
+	if(document.getElementById( 'area' ).style.display === 'block') {
 	  nowtext += 1;
+	}
         if(nowtext === 3) {
 const changeimg3 = document.getElementById("img");
     changeimg3.src = "stage4.png";
