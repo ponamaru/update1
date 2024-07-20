@@ -478,6 +478,26 @@ if(walking === 2) {
 }
 
 if(walking === 1) {
+if (lr === 1) {
+if(stageX > rightend) {
+if( x > 490 ) {
+if(stageX < 1990) {
+        stageX -= 20;
+}
+        }
+}else{
+if(x > 490) {
+if(x < 1100) {
+        x += 20;
+}
+}
+}
+if(x < 500) {
+
+        x += 20;
+        
+}
+}
 if (lr === -1) {
 if(stageX < leftend) {
 if( x < 510 ) {
@@ -498,6 +518,7 @@ if( x > -180 ) {
         
 }
 }
+
 if(x > 490) {
 
         if( ws === 10 )x -= 10;
@@ -529,6 +550,26 @@ if(walking === 2) {
 	if(lr === 1) stageX -= 5;
 	}
 if(walking === 1) {
+if (lr === 1) {
+if(stageX > rightend) {
+if( x > 490 ) {
+if(stageX < 1990) {
+        stageX -= 20;
+}
+        }
+}else{
+if(x > 490) {
+if(x < 1100) {
+        x += 20;
+}
+}
+}
+if(x < 500) {
+
+        x += 20;
+        
+}
+}
 if (lr === 1) {
 if(stageX > rightend) {
 
