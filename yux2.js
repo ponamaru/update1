@@ -185,6 +185,93 @@ const image5 = document.getElementById('stickface');
 const image6 = document.getElementById('stickface'); 
 const image7 = document.getElementById('stickface'); 
 
+function jumping() {
+if (ws === 10) {
+image.animate(
+
+  [
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(-15deg)'}, 
+    { transform: 'rotate(0deg)'},
+  ], 
+  
+  {
+    fill: 'backwards', 
+    duration: 500, 
+  },
+);
+
+image2.animate(
+   [
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(15deg)'}, 
+    { transform: 'rotate(0deg)'},
+  ], 
+
+  {
+    fill: 'backwards', 
+    duration: 500,
+  },
+);
+image5.animate(
+
+  [
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+  ], 
+    
+  {
+    fill: 'backwards',
+    duration: 500,
+  },
+);
+}
+if (ws === 5) {
+image.animate(
+
+  [
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(30deg)' },
+    { transform: 'rotate(0deg)'},
+  ], 
+  
+  {
+    fill: 'backwards', 
+    duration: 500, 
+  },
+);
+
+image2.animate(
+
+  [
+    { transform: 'rotate(0deg)'},
+    { transform: 'rotate(-30deg)' },
+    { transform: 'rotate(0deg)'},
+  ], 
+
+  {
+    fill: 'backwards', 
+    duration: 500, 
+  },
+);
+image6.animate(
+
+  [
+    { transform: 'translateY(0px)'},
+    { transform: 'translateY(2px)'},
+    { transform: 'translateY(0px)'},
+  ], 
+    
+  {
+    fill: 'backwards', 
+    duration: 500, 
+  },
+);
+
+}
+}
+
 function walk() {
 if (motion === 1) {
 if (ws === 10) {
@@ -496,6 +583,7 @@ if(walking === 2){
 	if( key_code === 38 ) {
     if(jump === 0) {
   intervalmakita = setInterval(makita, 5);
+	    jumping();
     }
 } 
 	if( key_code === 40 ) alert(stageX)
