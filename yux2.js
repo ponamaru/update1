@@ -553,8 +553,10 @@ if(walking === 2) {
 	if(lr === 1) stageX -= 5;
 	}
 if(walking === 1) {
+
 if (lr === 1) {
 if(stageX > rightend) {
+
 if( x > 490 ) {
 if(stageX < 1990) {
         if( ws === 10 )stageX -= 10;
@@ -563,48 +565,15 @@ if(stageX < 1990) {
         }
 }else{
 if(x > 490) {
+
 if(x < 1100) {
-               if( ws === 10 )x += 10;
+        if( ws === 10 )x += 10;
         if( ws === 5 )x += 20;
-}
-}
-}
-if(x < 500) {
-
-               if( ws === 10 )x += 10;
-        if( ws === 5 )x += 20;
-        
-}
-}
-if (lr === -1) {
-if(stageX < leftend) {
-if( x < 510 ) {
-if(stageX < 0) {
-
-        if( ws === 10 )stageX += 10;
-        if( ws === 5 )stageX += 20;
-        
-}
-}
-}else{
-if(x < 510) {
-
-if( x > -180 ) {
-        if( ws === 10 )x -= 10;
-        if( ws === 5 )x -= 20;
-}
-        
-}
-}
-
-if(x > 490) {
-
-        if( ws === 10 )x -= 10;
-        if( ws === 5 )x -= 20;
+        }
 
 }
 }
-if(x < 500) {
+if(x < 501) {
 
 if(x < 1100) {
         if( ws === 10 )x += 10;
@@ -619,7 +588,8 @@ if(x < 1100) {
 	  }
         jump += 1;
     if(jump > 47) {
-    jump = 0; y += 5;
+    jump = 0;
+        y += 5;
     clearInterval(intervalmakita2);
     if (motion === 1) {
     if(lr === 1) Rwalk = setInterval(rightwalk, 25);
