@@ -433,6 +433,7 @@ if(x > 490) {
  let intervalmakita;
 let intervalmakita2;
 
+	
 function makita2() {
         y += 5;
 	  if (motion === 1) {
