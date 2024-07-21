@@ -938,6 +938,7 @@ document.getElementById( 'ims' ).style.display = 'none';
 document.getElementById( 'bread' ).style.display = 'none';
 document.getElementById( 'eye' ).style.display = 'none';
 document.getElementById( 'eye2' ).style.display = 'none';
+walking = 1;
 }
 
 }
@@ -972,7 +973,7 @@ af();
 }
 }
 
-var nowtext = -1;
+var nowtext = 0;
 
 function movie() {
 if(fun = 6) {
@@ -991,6 +992,7 @@ document.getElementById( 'area' ).style.display = 'block';
 function Z1() {
 var key_code = event.keyCode;
 	if( key_code === 90 ) {
+	if(document.getElementById( 'area' ).style.display === 'block') {
         ws = 0;
 	if(nowtext === 3) {
 	  nowtext -= 3;
@@ -998,9 +1000,9 @@ var key_code = event.keyCode;
 	if(lr === -1) poteto3();
 	if(lr === 1) poteto();
 	} else {
-	if(document.getElementById( 'area' ).style.display === 'block') {
+
 	  nowtext += 1;
-	}
+	
         if(nowtext === 3) {
 	if(lr === 1) poteto2();
 	if(lr === -1) poteto4();
@@ -1009,6 +1011,7 @@ var key_code = event.keyCode;
 	}
 	document.getElementById("area").innerText = array[nowtext];
         }
+}
 }
 
 
@@ -1039,20 +1042,20 @@ var key_code = event.keyCode;
 if(fun === 7) {
 	if(document.getElementById( 'area' ).style.display === 'block') {
 	  nowtext += 1;
-	}
-        if(nowtext === 3) {
+}
+        if(nowtext === 4) {
 const changeimg3 = document.getElementById("img");
-    changeimg3.src = "stage4.png";
+    changeimg3.src = "stage7.png";
 const changeimg4 = document.getElementById("img2");
-    changeimg4.src = "stage4.png";
+    changeimg4.src = "stage9.png";
 const changeimg5 = document.getElementById("img3");
-    changeimg5.src = "stage4.png";
+    changeimg5.src = "stage11.png";
 const changeimg6 = document.getElementById("img4");
-    changeimg6.src = "stage4.png";
+    changeimg6.src = "stage10.png";
         ws = 10;
+y = 350;
 screenout(); //8screen
 fun = 8;
-walking = 1;
  window.setTimeout(fadein, 1000);
 const audio = new Audio('Null 11.mp3');
    audio.volume = 1;
@@ -1067,7 +1070,7 @@ image2.style.transform = `rotate(0deg)`;
 
 }
 
-var array = ['I don`t want this.', 'But I must eat this.', 'I must not leave food on the plate.',''];
+var array = ['Dorata gave me a melon bread.','I don`t want this.', 'But I must eat this.', 'I must not leave food on the plate.',''];
 
 
 function poteto() {
