@@ -608,7 +608,7 @@ if(walking === 2){
 	var key_code = event.keyCode;
 	if( key_code === 38 ) {
     if(jump === 0) {
-  intervalmakita = setInterval(makita, 5);
+  intervalmakita = setInterval(makita, 10);
 	    jumping();
     }
 } 
@@ -647,7 +647,7 @@ if(walking === 1){
 	var key_code = event.keyCode;
 	if( key_code === 38 ) {
     if(jump === 0) {
-  intervalmakita = setInterval(makita, 5);
+  intervalmakita = setInterval(makita, 10);
     }
 } 
 
