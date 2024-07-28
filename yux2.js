@@ -880,6 +880,7 @@ document.getElementById( 'movies' ).style.display = 'none';
 document.getElementById( 'area' ).style.display = 'none';
 document.getElementById( 'img4' ).style.display = 'none';
 document.getElementById( 'area' ).style.top = 650 + "px";
+document.getElementById( 'area' ).style.left = 100 + "px";
 if( stageX < -1330 ) fun = 2;
 }
 if( fun === 2 ) {
