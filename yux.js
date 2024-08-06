@@ -24,7 +24,11 @@ document.getElementById( 'stickhead' ).style.left = x + "px";
     
 document.getElementById( 'stickeye3' ).style.top = y -40 + "px";
 document.getElementById( 'stickeye3' ).style.left = x + "px";
-    
+
+document.getElementById( 'stickmouth' ).style.top = y -30 + "px";
+if(lr === 1)document.getElementById( 'stickmouth' ).style.left = x +9 + "px";
+if(lr === -1)document.getElementById( 'stickmouth' ).style.left = x -25 + "px";
+	
 document.getElementById( 'stickbody' ).style.top = y -30 + "px";
 document.getElementById( 'stickbody' ).style.left = x -15 + "px";
 
