@@ -44,7 +44,6 @@ let intervalID = setInterval(bodylink);
 function mouthClass() {
 const facetext = array[nowtext];
 const serifName = facetext.includes('Stick"');
-setTimeout(function() {
 if(serifName === true) {
   const mouth = document.getElementById("stickmouth");
     mouth.classList.remove("op0");
@@ -59,7 +58,6 @@ setTimeout(function() {
     mouth.classList.remove("mouthM");
     mouth.classList.add("op0");
 }
-}, 500);
 }
 
 addEventListener( "keydown", mouthClass );
