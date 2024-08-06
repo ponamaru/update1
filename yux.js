@@ -42,7 +42,7 @@ document.getElementById( 'rightleg' ).style.left = x -15 + "px";
 let intervalID = setInterval(bodylink);
 
 function mouthClass() {
-const facetext = array[nowtext];
+const facetext = array[nowtext] - 1;
 const serifName = facetext.includes('Stick"');
 if(serifName === true) {
   const mouth = document.getElementById("stickmouth");
