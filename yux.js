@@ -60,8 +60,6 @@ setTimeout(function() {
 }
 }
 
-addEventListener( "keydown", mouthClass );
-
 function fadeout() {
   const element = document.getElementById("fadein");
   if (element.classList.contains("fadein")) {
@@ -484,6 +482,7 @@ var key_code = event.keyCode;
         }
 	}
 	document.getElementById("area").innerText = array[nowtext];
+	mouthClass();
         }
 }
 
