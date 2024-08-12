@@ -460,7 +460,7 @@ var re2 = -1971;
 
 addEventListener( "keydown", keydownfunc2 );
 
-var jump = 0;
+var jump = -1;
 
  let Lwalk;
 let Rwalk;
