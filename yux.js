@@ -400,7 +400,7 @@ function makita2() {
 	  }
         jump += 1;
     if(jump > 47) {
-    jump = 0;
+    jump = -1;
     clearInterval(intervalmakita2);
     }
 }
@@ -410,7 +410,7 @@ function keydownfunc2( event ) {
 if(walking === 2){
 	var key_code = event.keyCode;
 	if( key_code === 38 ) {
-    if(jump === 0) {
+    if(jump === -1) {
   intervalmakita = setInterval(makita, 5);
     }
 } 
