@@ -588,7 +588,7 @@ if(x < 1100) {
 	  }
         jump += 1;
     if(jump > 47) {
-    jump = 0;
+    jump = -1;
         y += 5;
     clearInterval(intervalmakita2);
     if (motion === 1) {
@@ -607,7 +607,7 @@ function keydownfunc2( event ) {
 if(walking === 2){
 	var key_code = event.keyCode;
 	if( key_code === 38 ) {
-    if(jump === 0) {
+    if(jump === -1) {
   intervalmakita = setInterval(makita, 10);
 	    jumping();
     }
