@@ -402,6 +402,7 @@ function makita2() {
     if(jump > 47) {
     jump = -1;
     clearInterval(intervalmakita2);
+    y = 300;
     }
 }
  const element2 = document.getElementById("rightleg");
