@@ -1,5 +1,10 @@
 document.write( '<img src="無題.png" id="ims" width="800">' );
-
+        document.addEventListener("keydown", function(event) {
+            // 矢印キー（←↑→↓）のデフォルト動作を無効化
+            if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+                event.preventDefault();
+            }
+        });
 document.write( '<div class="fadein2"><img src="black2.png" id="fadein" class="fadein" width="120%" height="120%"></div>' );
 document.write( '<img src="black2.png" id="black" class="op0" width="120%" height="100%">' );
 document.write( '<img src="stick.png" id="stickbody" width="600">' );
