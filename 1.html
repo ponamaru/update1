@@ -9,7 +9,12 @@
 <title>update1</title>
     <script>
 const audio = new Audio('デジャブプール.mp3');
-
+        document.addEventListener("keydown", function(event) {
+            // 矢印キー（←↑→↓）のデフォルト動作を無効化
+            if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+                event.preventDefault();
+            }
+        });
 addEventListener('click', () => {
 audio.play();
 audio.loop = true;
